@@ -202,12 +202,16 @@ export class Graph<B extends BehaviorRegistry, T extends ThemeRegistry>
       if (size[1] === undefined) {
         size[1] = containerDOM.scrollHeight;
       }
+
+      const unregisterPlugins = ['dom-interaction'];
       this.backgroundCanvas = createCanvas(
         this.rendererType,
         containerDOM,
         size[0],
         size[1],
         pixelRatio,
+        undefined,
+        unregisterPlugins,
       );
       this.canvas = createCanvas(
         this.rendererType,
@@ -222,6 +226,8 @@ export class Graph<B extends BehaviorRegistry, T extends ThemeRegistry>
         size[0],
         size[1],
         pixelRatio,
+        undefined,
+        unregisterPlugins,
       );
     }
 
